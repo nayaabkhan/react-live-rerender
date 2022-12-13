@@ -5,6 +5,7 @@ import { LiveProvider, LivePreview, LiveError } from 'react-live'
 const code = `
 <input
   type='text'
+  placeholder='I am react-live'
   value={readState()}
   onChange={(e) => writeState(e.target.value)}
 />
@@ -23,11 +24,13 @@ export default function Home() {
 
   return (
     <>
+      <Link href="/">React Live example</Link> |{' '}
+      <Link href="/jsxparser">JSX Parser example</Link>
+      <hr />
       <LiveProvider code={code} scope={{ readState, writeState }}>
         <LivePreview />
         <LiveError />
       </LiveProvider>
-      <Link href="/jsxparser">JSX Parser example</Link>
     </>
   )
 }

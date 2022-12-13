@@ -5,6 +5,7 @@ import JsxParser from 'react-jsx-parser'
 const code = `
 <input
   type='text'
+  placeholder='I am react-jsx-parser'
   value={readState()}
   onChange={(e) => writeState(e.target.value)}
 />
@@ -23,6 +24,9 @@ export default function Home() {
 
   return (
     <>
+      <Link href="/">React Live example</Link> |{' '}
+      <Link href="/jsxparser">JSX Parser example</Link>
+      <hr />
       {/* @ts-expect-error */}
       <JsxParser
         bindings={{ readState, writeState }}
@@ -30,7 +34,6 @@ export default function Home() {
         blacklistedAttrs={[]}
         disableKeyGeneration
       />
-      <Link href="/">React-Live example</Link>
     </>
   )
 }
