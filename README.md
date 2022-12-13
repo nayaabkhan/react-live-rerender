@@ -13,6 +13,12 @@ It is expected the whole input isn't re-rendered but only the `value` updated.
 
 ## Getting Started
 
+### CodeSandbox
+
+https://codesandbox.io/p/github/nayaabkhan/react-live-rerender/react-live-rerender
+
+### Locally
+
 First, run the development server:
 
 ```bash
