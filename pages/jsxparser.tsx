@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { LiveProvider, LivePreview, LiveError } from 'react-live'
+import JsxParser from 'react-jsx-parser'
 
 const code = `
 <input
@@ -23,11 +23,14 @@ export default function Home() {
 
   return (
     <>
-      <LiveProvider code={code} scope={{ readState, writeState }}>
-        <LivePreview />
-        <LiveError />
-      </LiveProvider>
-      <Link href="/jsxparser">JSX Parser example</Link>
+      {/* @ts-expect-error */}
+      <JsxParser
+        bindings={{ readState, writeState }}
+        jsx={code}
+        blacklistedAttrs={[]}
+        disableKeyGeneration
+      />
+      <Link href="/">React-Live example</Link>
     </>
   )
 }
